@@ -3,9 +3,22 @@ $('#currentDay').text(moment().format('dddd, MMM Do YYYY'));
 
 let buttonSave = $('.saveBtn');
 let eventNote = $('.event-detail');
+let currentHour = moment().hour();
+let bizHour = $('.row-custom');
+
 
 for (i=0; i<eventNote.length; i++) {
     eventNote[i].value = localStorage.getItem(i+9); //print values from local storage
+};
+
+for (i=0; i<bizHour.length; i++) {
+    let calendarHour = bizHour[i].dataset.hour
+    console.log(calendarHour, currentHour);
+    if (calendarHour<currentHour) {
+        $(bizHour[i]).attr('class','row-custom past');
+    } else if (calendarHour>currentHour) {
+        $(bizHour[i]).attr('class','row-custom future');
+    } else $(bizHour[i]).attr('class','row-custom present');
 };
 
 //save to local storage function
