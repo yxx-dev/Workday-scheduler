@@ -1,11 +1,7 @@
 # Work Day Scheduler
 
 ## Description
-A work day scheduler 
-
-
-
-with a count down timer that also shows and logs correct/incorrect answers. It also allows retry and records the highest score. Deployment: xxxxxx
+A simple calendar application that allows a user to save events for each hour of the day. This app will run in the browser and feature dynamically updated HTML and CSS powered by jQuery. Deployment: https://yxx-dev.github.io/Workday-scheduler/
 
 ## Table of Contents (Optional)
 NA
