@@ -29,7 +29,33 @@
       <p id="currentDay" class="lead"></p>
     </header>
     <div class="container">
-      <!-- Timeblocks go here -->
+      <p id="status">status</p>
+      <table class="table table-hover">
+        <thead class="time-block">
+          <tr>
+            <th scope="col">Hour</th>
+            <th scope="col" colspan="4">Event</th>
+            <th scope="col">Control</th>
+          </tr>
+        </thead>
+        <tbody class="time-block">
+          <tr class="row-custom">
+            <th scope="row" class="Hour">12 am</th>
+            <td colspan="4">Mark</td>
+            <td><button type="button" class="saveBtn btn btn-outline-dark btn-sm">Save</button></td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td colspan="4">Jacob</td>
+            <td>Thornton</td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td colspan="4">Jacob</td>
+            <td>Thornton</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
