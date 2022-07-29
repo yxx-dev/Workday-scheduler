@@ -6,8 +6,16 @@ let eventNote = $('.event-detail');
 let currentHour = moment().hour();
 let bizHour = $('.row-custom');
 
+//reset localstorage as new day start
+$('.new-day').on('click', newDay);
+function newDay() {
+    for (i=0; i<bizHour.length; i++) {
+        localStorage.removeItem(i+9);
+        eventNote[i].value = '';
+    };
+};
 
-for (i=0; i<eventNote.length; i++) {
+for (i=0; i<bizHour.length; i++) {
     eventNote[i].value = localStorage.getItem(i+9); //print values from local storage
 };
 
@@ -26,6 +34,7 @@ buttonSave.on('click', saveEvent);
 function saveEvent (event) {
     //console.log($(event.target).parent().parent()[0].dataset.hour);
     let activeHour = $(event.target).parent().parent()[0].dataset.hour;
+    //console.log($(event.target).parent().parent());
     console.log(eventNote[activeHour-9].value);
     localStorage.setItem(activeHour,eventNote[activeHour-9].value);
     //eventNote[activeHour-9].value='';
