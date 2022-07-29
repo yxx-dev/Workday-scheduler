@@ -11,8 +11,10 @@ for (i=0; i<eventNote.length; i++) {
 //save to local storage function
 buttonSave.on('click', saveEvent);
 function saveEvent (event) {
-    let activeHour = event.target.dataset.hour;
+    //console.log($(event.target).parent().parent()[0].dataset.hour);
+    let activeHour = $(event.target).parent().parent()[0].dataset.hour;
     console.log(eventNote[activeHour-9].value);
-    localStorage.setItem(activeHour,eventNote[activeHour-9].value)
+    localStorage.setItem(activeHour,eventNote[activeHour-9].value);
     //eventNote[activeHour-9].value='';
+    $('#status').text(`${moment(activeHour,'h').format('h a')} event set.`);
 };
